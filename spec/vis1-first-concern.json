@@ -3,7 +3,7 @@
   "width": "container",
   "height": 300,
   "data": {
-    "url": "data1-first-concern.json"
+    "url": "../data/data1-first-concern.json"
   },
   "params": [
     {

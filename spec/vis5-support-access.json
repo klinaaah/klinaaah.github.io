@@ -3,7 +3,7 @@
   "width": "container",
   "height": 300,
   "data": {
-    "url": "data5-support-access.json"
+    "url": "../data/data5-support-access.json"
   },
   "params": [
     {
