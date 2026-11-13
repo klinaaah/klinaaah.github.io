@@ -3,7 +3,7 @@
   "width": "container",
   "height": 320,
   "data": {
-    "url": "../data/data3-assessment.json"
+    "url": "data/data3-assessment.json"
   },
   "params": [
     {

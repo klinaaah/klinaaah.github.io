@@ -3,7 +3,7 @@
   "width": "container",
   "height": 300,
   "data": {
-    "url": "../data/data4-diagnosis-age.json"
+    "url": "data/data4-diagnosis-age.json"
   },
   "params": [
     {
