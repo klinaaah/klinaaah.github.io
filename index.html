@@ -3,33 +3,335 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vega-Lite Visualization</title>
+  <title>The Autism Diagnosing Process: A Data Story</title>
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <style>
+    body { font-family: Georgia, "Times New Roman", serif; line-height: 1.7; margin: 0; color: #222; background: #fafafa; }
+    main { max-width: 900px; margin: 0 auto; padding: 2rem 1.25rem 3rem; background: #fff; }
+    h1 { font-size: 2rem; line-height: 1.2; margin-bottom: 0.5rem; }
+    h2 { margin-top: 2.2rem; font-size: 1.35rem; }
+    p { margin: 0.9rem 0; }
+    .lede { color: #444; font-size: 1.05rem; }
+    .viz-block { margin: 1.5rem 0 2rem; padding: 1rem; border: 1px solid #e2e2e2; border-radius: 8px; background: #fcfcfc; }
+    .filter-note { font-family: Arial, sans-serif; font-size: 0.95rem; color: #333; margin: 0 0 0.5rem; }
+    .vis { width: 100%; }
+    footer { font-family: Arial, sans-serif; font-size: 0.85rem; color: #666; margin-top: 2rem; border-top: 1px solid #eee; padding-top: 1rem; }
+  </style>
 </head>
 <body>
-  <div id="vis"></div>
+  <main>
+    <h1>The Autism Diagnosing Process: A Story in Five Charts</h1>
+    <p class="lede">For many families and autistic people, diagnosis is not a single appointment but a long sequence of noticing, waiting, assessing, understanding, and seeking support. The figures below use illustrative data to trace that path, showing how timing, access, and experience can differ at each stage.</p>
+
+    <h2>1. Noticing the First Signs</h2>
+    <p>The journey often begins with small observations: a child who communicates differently, seeks comfort in routines, responds intensely to sound or texture, or finds social situations confusing. Parents, caregivers, teachers, or the individuals themselves may sense that something deserves attention long before any formal label is considered. In some households, concerns emerge in toddler years; in others, differences become clearer only when school expectations grow. Cultural expectations, prior knowledge of autism, and access to informed professionals all shape when concerns are voiced and whether they are taken seriously.</p>
+    <p>Early recognition matters because it can open doors to understanding and support, yet recognition is uneven. Families may be reassured to “wait and see,” while others struggle to find someone who listens. The chart below illustrates how the age of first concern can vary depending on who first notices the differences. Comparing perspectives highlights an important truth: diagnosis rarely starts in a clinic. It starts in everyday life, where patterns are first seen, questioned, and carried forward into the search for answers.</p>
+    <div class="viz-block">
+      <p class="filter-note"><strong>Filter text:</strong> Use the reporter filter to compare when concerns were first noted by parents/caregivers, teachers, or self-reflection in later years. Selecting a group updates the chart to show that perspective only.</p>
+      <div id="vis1" class="vis"></div>
+    </div>
+
+    <h2>2. Waiting for Answers</h2>
+    <p>Once concerns are raised, many people enter one of the hardest parts of the process: waiting. A referral may lead to a screening, a place on a waitlist, or months of uncertainty before a full assessment is scheduled. During this period, daily challenges do not pause. Children may need classroom adjustments, adults may seek workplace accommodations, and families may look for strategies without yet having formal documentation. The emotional weight of waiting can be significant, blending hope, anxiety, frustration, and determination.</p>
+    <p>Wait times are shaped by local service capacity, provider availability, insurance or funding pathways, and regional demand. A family in one area may be seen within weeks, while another waits more than a year for the same step. These delays can affect not only well-being but also the timing of helpful supports. The visualization shows illustrative referral-to-assessment wait times over recent years by service setting. Filtering by service type reveals how community clinics, hospital teams, and private providers can present different timelines, underscoring why the path to diagnosis often feels unpredictable.</p>
+    <div class="viz-block">
+      <p class="filter-note"><strong>Filter text:</strong> Use the service type filter to view estimated wait times for community clinics, hospital teams, or private providers. Choose “All services” to compare overall trends across settings.</p>
+      <div id="vis2" class="vis"></div>
+    </div>
+
+    <h2>3. The Assessment Journey</h2>
+    <p>An autism assessment is rarely a single test. It is typically a careful process that may include developmental history, caregiver interviews, observation, cognitive or language evaluation, and questionnaires completed across settings. Clinicians look for patterns in communication, social interaction, sensory experience, and behavior, while also considering strengths, co-occurring conditions, and the person’s daily environment. Good assessment practice is collaborative and respectful, aiming to understand the whole person rather than check boxes.</p>
+    <p>Still, the journey can feel complex. Appointments may be spread across weeks, records must be gathered, and people may need to retell difficult experiences more than once. For some, especially those who mask their traits or have learned coping strategies, differences can be harder to recognize in brief clinical encounters. The chart illustrates completion of common assessment components by age band. By filtering age groups, it becomes easier to see how evaluation pathways may differ for young children, adolescents, and adults navigating diagnosis later in life.</p>
+    <div class="viz-block">
+      <p class="filter-note"><strong>Filter text:</strong> Use the age band filter to examine which assessment components were included for children, adolescents, or adults. The filter highlights how evaluation pathways can vary across life stages.</p>
+      <div id="vis3" class="vis"></div>
+    </div>
+
+    <h2>4. Receiving a Diagnosis</h2>
+    <p>Receiving a diagnosis can bring mixed emotions. For some, it offers clarity, language, and validation after years of feeling misunderstood. For others, it raises new questions about identity, support, and what comes next. A diagnosis does not change who a person is, but it can change how their experiences are interpreted by schools, employers, clinicians, and the individual themselves. It may also challenge outdated assumptions, particularly for people whose traits were overlooked because they did not fit narrow stereotypes.</p>
+    <p>Age at diagnosis varies widely. Some children are identified early, while many people—especially girls, women, and adults with subtler or masked presentations—are diagnosed much later. Delayed diagnosis can mean years without explanation or accommodations, but late identification can still be deeply meaningful. The chart presents an illustrative distribution of diagnosis age by presentation profile. Using the filter, readers can compare patterns and reflect on why timely, informed assessment matters for everyone, regardless of how autism is expressed.</p>
+    <div class="viz-block">
+      <p class="filter-note"><strong>Filter text:</strong> Use the presentation profile filter to compare illustrative diagnosis ages for early-identified, school-age identified, and late-identified profiles. This view emphasizes variation in when people receive answers.</p>
+      <div id="vis4" class="vis"></div>
+    </div>
+
+    <h2>5. After the Diagnosis: Finding Support</h2>
+    <p>A diagnosis is often described as an endpoint, but in practice it is also a beginning. Families and individuals may seek therapies, educational accommodations, social supports, mental health care, or community connections that align with their needs and goals. The most helpful support is individualized: what benefits one autistic person may not suit another. Respecting autonomy, communication preferences, and lived experience is essential. Support should not aim to erase difference, but to reduce barriers and make daily life more accessible and sustainable.</p>
+    <p>Yet access to post-diagnosis services can involve another round of waiting and navigation. People may face limited providers, high costs, unclear eligibility, or long queues for specific programs. The final chart shows illustrative wait times for common types of support after diagnosis. Filtering by support category helps compare how quickly people might connect with speech and language services, occupational therapy, mental health care, or peer and community programs. Together, these five visualizations tell a broader story: diagnosis is a process shaped by recognition, systems, and time—and every step influences what support becomes possible.</p>
+    <div class="viz-block">
+      <p class="filter-note"><strong>Filter text:</strong> Use the support type filter to compare post-diagnosis wait times for speech and language, occupational therapy, mental health, and community supports. Select a category to focus on one pathway.</p>
+      <div id="vis5" class="vis"></div>
+    </div>
+
+    <footer>All chart values are illustrative and intended for storytelling and visualization demonstration purposes.</footer>
+  </main>
+
   <script>
-    const spec = {
+    const spec1 = {
       "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-      "description": "A simple Vega-Lite visualization stub.",
+      "width": "container",
+      "height": 300,
       "data": {
         "values": [
-          {"category": "A", "value": 28},
-          {"category": "B", "value": 55},
-          {"category": "C", "value": 43},
-          {"category": "D", "value": 91}
+          {"age": "1-2", "count": 18, "reporter": "Parent/caregiver"},
+          {"age": "3-4", "count": 32, "reporter": "Parent/caregiver"},
+          {"age": "5-6", "count": 20, "reporter": "Parent/caregiver"},
+          {"age": "7-9", "count": 12, "reporter": "Parent/caregiver"},
+          {"age": "10+", "count": 8, "reporter": "Parent/caregiver"},
+          {"age": "1-2", "count": 6, "reporter": "Teacher"},
+          {"age": "3-4", "count": 22, "reporter": "Teacher"},
+          {"age": "5-6", "count": 28, "reporter": "Teacher"},
+          {"age": "7-9", "count": 16, "reporter": "Teacher"},
+          {"age": "10+", "count": 10, "reporter": "Teacher"},
+          {"age": "1-2", "count": 1, "reporter": "Self-reflection"},
+          {"age": "3-4", "count": 2, "reporter": "Self-reflection"},
+          {"age": "5-6", "count": 5, "reporter": "Self-reflection"},
+          {"age": "7-9", "count": 14, "reporter": "Self-reflection"},
+          {"age": "10+", "count": 34, "reporter": "Self-reflection"}
         ]
       },
+      "params": [
+        {
+          "name": "reporter_select",
+          "value": "All",
+          "bind": {"input": "select", "options": ["All", "Parent/caregiver", "Teacher", "Self-reflection"], "name": "Reporter: "}
+        }
+      ],
+      "transform": [
+        {"filter": "reporter_select == 'All' || datum.reporter == reporter_select"}
+      ],
       "mark": "bar",
       "encoding": {
-        "x": {"field": "category", "type": "nominal", "title": "Category"},
-        "y": {"field": "value", "type": "quantitative", "title": "Value"}
+        "x": {"field": "age", "type": "ordinal", "title": "Age at first concern", "sort": ["1-2", "3-4", "5-6", "7-9", "10+"]},
+        "y": {"field": "count", "type": "quantitative", "title": "Illustrative number of cases"},
+        "color": {"field": "reporter", "type": "nominal", "title": "Reporter"},
+        "tooltip": [
+          {"field": "reporter", "type": "nominal"},
+          {"field": "age", "type": "ordinal", "title": "Age"},
+          {"field": "count", "type": "quantitative", "title": "Cases"}
+        ]
       }
     };
 
-    vegaEmbed("#vis", spec);
+    const spec2 = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "width": "container",
+      "height": 300,
+      "data": {
+        "values": [
+          {"year": 2020, "months": 8, "service": "Community clinic"},
+          {"year": 2021, "months": 10, "service": "Community clinic"},
+          {"year": 2022, "months": 11, "service": "Community clinic"},
+          {"year": 2023, "months": 9, "service": "Community clinic"},
+          {"year": 2024, "months": 8, "service": "Community clinic"},
+          {"year": 2020, "months": 6, "service": "Hospital team"},
+          {"year": 2021, "months": 9, "service": "Hospital team"},
+          {"year": 2022, "months": 12, "service": "Hospital team"},
+          {"year": 2023, "months": 10, "service": "Hospital team"},
+          {"year": 2024, "months": 9, "service": "Hospital team"},
+          {"year": 2020, "months": 3, "service": "Private provider"},
+          {"year": 2021, "months": 4, "service": "Private provider"},
+          {"year": 2022, "months": 5, "service": "Private provider"},
+          {"year": 2023, "months": 4, "service": "Private provider"},
+          {"year": 2024, "months": 3, "service": "Private provider"}
+        ]
+      },
+      "params": [
+        {
+          "name": "service_select",
+          "value": "All services",
+          "bind": {"input": "select", "options": ["All services", "Community clinic", "Hospital team", "Private provider"], "name": "Service type: "}
+        }
+      ],
+      "transform": [
+        {"filter": "service_select == 'All services' || datum.service == service_select"}
+      ],
+      "mark": {"type": "line", "point": true},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal", "title": "Referral year"},
+        "y": {"field": "months", "type": "quantitative", "title": "Average wait (months)"},
+        "color": {"field": "service", "type": "nominal", "title": "Service"},
+        "tooltip": [
+          {"field": "service", "type": "nominal"},
+          {"field": "year", "type": "ordinal"},
+          {"field": "months", "type": "quantitative", "title": "Months"}
+        ]
+      }
+    };
+
+    const spec3 = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "width": "container",
+      "height": 320,
+      "data": {
+        "values": [
+          {"component": "Developmental history", "status": "Completed", "count": 88, "ageBand": "Children"},
+          {"component": "Developmental history", "status": "Not completed", "count": 12, "ageBand": "Children"},
+          {"component": "Caregiver interview", "status": "Completed", "count": 92, "ageBand": "Children"},
+          {"component": "Caregiver interview", "status": "Not completed", "count": 8, "ageBand": "Children"},
+          {"component": "Direct observation", "status": "Completed", "count": 85, "ageBand": "Children"},
+          {"component": "Direct observation", "status": "Not completed", "count": 15, "ageBand": "Children"},
+          {"component": "Language/cognitive testing", "status": "Completed", "count": 76, "ageBand": "Children"},
+          {"component": "Language/cognitive testing", "status": "Not completed", "count": 24, "ageBand": "Children"},
+          {"component": "School/community input", "status": "Completed", "count": 70, "ageBand": "Children"},
+          {"component": "School/community input", "status": "Not completed", "count": 30, "ageBand": "Children"},
+
+          {"component": "Developmental history", "status": "Completed", "count": 80, "ageBand": "Adolescents"},
+          {"component": "Developmental history", "status": "Not completed", "count": 20, "ageBand": "Adolescents"},
+          {"component": "Caregiver interview", "status": "Completed", "count": 74, "ageBand": "Adolescents"},
+          {"component": "Caregiver interview", "status": "Not completed", "count": 26, "ageBand": "Adolescents"},
+          {"component": "Direct observation", "status": "Completed", "count": 68, "ageBand": "Adolescents"},
+          {"component": "Direct observation", "status": "Not completed", "count": 32, "ageBand": "Adolescents"},
+          {"component": "Language/cognitive testing", "status": "Completed", "count": 65, "ageBand": "Adolescents"},
+          {"component": "Language/cognitive testing", "status": "Not completed", "count": 35, "ageBand": "Adolescents"},
+          {"component": "School/community input", "status": "Completed", "count": 72, "ageBand": "Adolescents"},
+          {"component": "School/community input", "status": "Not completed", "count": 28, "ageBand": "Adolescents"},
+
+          {"component": "Developmental history", "status": "Completed", "count": 62, "ageBand": "Adults"},
+          {"component": "Developmental history", "status": "Not completed", "count": 38, "ageBand": "Adults"},
+          {"component": "Caregiver interview", "status": "Completed", "count": 40, "ageBand": "Adults"},
+          {"component": "Caregiver interview", "status": "Not completed", "count": 60, "ageBand": "Adults"},
+          {"component": "Direct observation", "status": "Completed", "count": 58, "ageBand": "Adults"},
+          {"component": "Direct observation", "status": "Not completed", "count": 42, "ageBand": "Adults"},
+          {"component": "Language/cognitive testing", "status": "Completed", "count": 46, "ageBand": "Adults"},
+          {"component": "Language/cognitive testing", "status": "Not completed", "count": 54, "ageBand": "Adults"},
+          {"component": "School/community input", "status": "Completed", "count": 35, "ageBand": "Adults"},
+          {"component": "School/community input", "status": "Not completed", "count": 65, "ageBand": "Adults"}
+        ]
+      },
+      "params": [
+        {
+          "name": "age_select",
+          "value": "Children",
+          "bind": {"input": "select", "options": ["Children", "Adolescents", "Adults"], "name": "Age band: "}
+        }
+      ],
+      "transform": [
+        {"filter": "datum.ageBand == age_select"}
+      ],
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "component", "type": "nominal", "title": "Assessment component", "sort": null},
+        "x": {"field": "count", "type": "quantitative", "title": "Illustrative share (%)", "stack": "normalize"},
+        "color": {"field": "status", "type": "nominal", "title": "Status", "scale": {"range": ["#4c78a8", "#e0e0e0"]}},
+        "tooltip": [
+          {"field": "ageBand", "type": "nominal", "title": "Age band"},
+          {"field": "component", "type": "nominal"},
+          {"field": "status", "type": "nominal"},
+          {"field": "count", "type": "quantitative", "title": "Value"}
+        ]
+      }
+    };
+
+    const spec4 = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "width": "container",
+      "height": 300,
+      "data": {
+        "values": [
+          {"age": "2-4", "count": 34, "profile": "Early-identified"},
+          {"age": "5-7", "count": 28, "profile": "Early-identified"},
+          {"age": "8-10", "count": 10, "profile": "Early-identified"},
+          {"age": "11-14", "count": 4, "profile": "Early-identified"},
+          {"age": "15-18", "count": 2, "profile": "Early-identified"},
+          {"age": "19+", "count": 1, "profile": "Early-identified"},
+
+          {"age": "2-4", "count": 6, "profile": "School-age identified"},
+          {"age": "5-7", "count": 24, "profile": "School-age identified"},
+          {"age": "8-10", "count": 30, "profile": "School-age identified"},
+          {"age": "11-14", "count": 22, "profile": "School-age identified"},
+          {"age": "15-18", "count": 10, "profile": "School-age identified"},
+          {"age": "19+", "count": 4, "profile": "School-age identified"},
+
+          {"age": "2-4", "count": 1, "profile": "Late-identified"},
+          {"age": "5-7", "count": 3, "profile": "Late-identified"},
+          {"age": "8-10", "count": 6, "profile": "Late-identified"},
+          {"age": "11-14", "count": 14, "profile": "Late-identified"},
+          {"age": "15-18", "count": 24, "profile": "Late-identified"},
+          {"age": "19+", "count": 36, "profile": "Late-identified"}
+        ]
+      },
+      "params": [
+        {
+          "name": "profile_select",
+          "value": "All profiles",
+          "bind": {"input": "select", "options": ["All profiles", "Early-identified", "School-age identified", "Late-identified"], "name": "Presentation profile: "}
+        }
+      ],
+      "transform": [
+        {"filter": "profile_select == 'All profiles' || datum.profile == profile_select"}
+      ],
+      "mark": "bar",
+      "encoding": {
+        "x": {"field": "age", "type": "ordinal", "title": "Age at diagnosis", "sort": ["2-4", "5-7", "8-10", "11-14", "15-18", "19+"]},
+        "y": {"field": "count", "type": "quantitative", "title": "Illustrative number of cases"},
+        "color": {"field": "profile", "type": "nominal", "title": "Profile"},
+        "tooltip": [
+          {"field": "profile", "type": "nominal"},
+          {"field": "age", "type": "ordinal", "title": "Age"},
+          {"field": "count", "type": "quantitative", "title": "Cases"}
+        ]
+      }
+    };
+
+    const spec5 = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "width": "container",
+      "height": 300,
+      "data": {
+        "values": [
+          {"stage": "0-3 months", "monthsCount": 24, "support": "Speech and language"},
+          {"stage": "4-6 months", "monthsCount": 36, "support": "Speech and language"},
+          {"stage": "7-12 months", "monthsCount": 28, "support": "Speech and language"},
+          {"stage": "12+ months", "monthsCount": 12, "support": "Speech and language"},
+
+          {"stage": "0-3 months", "monthsCount": 18, "support": "Occupational therapy"},
+          {"stage": "4-6 months", "monthsCount": 30, "support": "Occupational therapy"},
+          {"stage": "7-12 months", "monthsCount": 34, "support": "Occupational therapy"},
+          {"stage": "12+ months", "monthsCount": 18, "support": "Occupational therapy"},
+
+          {"stage": "0-3 months", "monthsCount": 20, "support": "Mental health"},
+          {"stage": "4-6 months", "monthsCount": 26, "support": "Mental health"},
+          {"stage": "7-12 months", "monthsCount": 32, "support": "Mental health"},
+          {"stage": "12+ months", "monthsCount": 22, "support": "Mental health"},
+
+          {"stage": "0-3 months", "monthsCount": 40, "support": "Community/peer support"},
+          {"stage": "4-6 months", "monthsCount": 30, "support": "Community/peer support"},
+          {"stage": "7-12 months", "monthsCount": 20, "support": "Community/peer support"},
+          {"stage": "12+ months", "monthsCount": 10, "support": "Community/peer support"}
+        ]
+      },
+      "params": [
+        {
+          "name": "support_select",
+          "value": "All supports",
+          "bind": {"input": "select", "options": ["All supports", "Speech and language", "Occupational therapy", "Mental health", "Community/peer support"], "name": "Support type: "}
+        }
+      ],
+      "transform": [
+        {"filter": "support_select == 'All supports' || datum.support == support_select"}
+      ],
+      "mark": "bar",
+      "encoding": {
+        "x": {"field": "stage", "type": "ordinal", "title": "Time to access support", "sort": ["0-3 months", "4-6 months", "7-12 months", "12+ months"]},
+        "y": {"field": "monthsCount", "type": "quantitative", "title": "Illustrative number of people"},
+        "color": {"field": "support", "type": "nominal", "title": "Support"},
+        "xOffset": {"field": "support"},
+        "tooltip": [
+          {"field": "support", "type": "nominal"},
+          {"field": "stage", "type": "ordinal", "title": "Wait period"},
+          {"field": "monthsCount", "type": "quantitative", "title": "People"}
+        ]
+      }
+    };
+
+    vegaEmbed("#vis1", spec1, {actions: false});
+    vegaEmbed("#vis2", spec2, {actions: false});
+    vegaEmbed("#vis3", spec3, {actions: false});
+    vegaEmbed("#vis4", spec4, {actions: false});
+    vegaEmbed("#vis5", spec5, {actions: false});
   </script>
 </body>
 </html>
