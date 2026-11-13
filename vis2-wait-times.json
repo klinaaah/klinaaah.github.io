@@ -3,23 +3,7 @@
   "width": "container",
   "height": 300,
   "data": {
-    "values": [
-      {"year": 2020, "months": 8, "service": "Community clinic"},
-      {"year": 2021, "months": 10, "service": "Community clinic"},
-      {"year": 2022, "months": 11, "service": "Community clinic"},
-      {"year": 2023, "months": 9, "service": "Community clinic"},
-      {"year": 2024, "months": 8, "service": "Community clinic"},
-      {"year": 2020, "months": 6, "service": "Hospital team"},
-      {"year": 2021, "months": 9, "service": "Hospital team"},
-      {"year": 2022, "months": 12, "service": "Hospital team"},
-      {"year": 2023, "months": 10, "service": "Hospital team"},
-      {"year": 2024, "months": 9, "service": "Hospital team"},
-      {"year": 2020, "months": 3, "service": "Private provider"},
-      {"year": 2021, "months": 4, "service": "Private provider"},
-      {"year": 2022, "months": 5, "service": "Private provider"},
-      {"year": 2023, "months": 4, "service": "Private provider"},
-      {"year": 2024, "months": 3, "service": "Private provider"}
-    ]
+    "url": "data2-wait-times.json"
   },
   "params": [
     {

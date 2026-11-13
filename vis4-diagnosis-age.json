@@ -3,28 +3,7 @@
   "width": "container",
   "height": 300,
   "data": {
-    "values": [
-      {"age": "2-4", "count": 34, "profile": "Early-identified"},
-      {"age": "5-7", "count": 28, "profile": "Early-identified"},
-      {"age": "8-10", "count": 10, "profile": "Early-identified"},
-      {"age": "11-14", "count": 4, "profile": "Early-identified"},
-      {"age": "15-18", "count": 2, "profile": "Early-identified"},
-      {"age": "19+", "count": 1, "profile": "Early-identified"},
-
-      {"age": "2-4", "count": 6, "profile": "School-age identified"},
-      {"age": "5-7", "count": 24, "profile": "School-age identified"},
-      {"age": "8-10", "count": 30, "profile": "School-age identified"},
-      {"age": "11-14", "count": 22, "profile": "School-age identified"},
-      {"age": "15-18", "count": 10, "profile": "School-age identified"},
-      {"age": "19+", "count": 4, "profile": "School-age identified"},
-
-      {"age": "2-4", "count": 1, "profile": "Late-identified"},
-      {"age": "5-7", "count": 3, "profile": "Late-identified"},
-      {"age": "8-10", "count": 6, "profile": "Late-identified"},
-      {"age": "11-14", "count": 14, "profile": "Late-identified"},
-      {"age": "15-18", "count": 24, "profile": "Late-identified"},
-      {"age": "19+", "count": 36, "profile": "Late-identified"}
-    ]
+    "url": "data4-diagnosis-age.json"
   },
   "params": [
     {

@@ -1,0 +1,17 @@
+[
+  {"age": "1-2", "count": 18, "reporter": "Parent/caregiver"},
+  {"age": "3-4", "count": 32, "reporter": "Parent/caregiver"},
+  {"age": "5-6", "count": 20, "reporter": "Parent/caregiver"},
+  {"age": "7-9", "count": 12, "reporter": "Parent/caregiver"},
+  {"age": "10+", "count": 8, "reporter": "Parent/caregiver"},
+  {"age": "1-2", "count": 6, "reporter": "Teacher"},
+  {"age": "3-4", "count": 22, "reporter": "Teacher"},
+  {"age": "5-6", "count": 28, "reporter": "Teacher"},
+  {"age": "7-9", "count": 16, "reporter": "Teacher"},
+  {"age": "10+", "count": 10, "reporter": "Teacher"},
+  {"age": "1-2", "count": 1, "reporter": "Self-reflection"},
+  {"age": "3-4", "count": 2, "reporter": "Self-reflection"},
+  {"age": "5-6", "count": 5, "reporter": "Self-reflection"},
+  {"age": "7-9", "count": 14, "reporter": "Self-reflection"},
+  {"age": "10+", "count": 34, "reporter": "Self-reflection"}
+]
