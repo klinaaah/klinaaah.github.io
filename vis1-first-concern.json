@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "data": {
+    "values": [
+      {"age": "1-2", "count": 18, "reporter": "Parent/caregiver"},
+      {"age": "3-4", "count": 32, "reporter": "Parent/caregiver"},
+      {"age": "5-6", "count": 20, "reporter": "Parent/caregiver"},
+      {"age": "7-9", "count": 12, "reporter": "Parent/caregiver"},
+      {"age": "10+", "count": 8, "reporter": "Parent/caregiver"},
+      {"age": "1-2", "count": 6, "reporter": "Teacher"},
+      {"age": "3-4", "count": 22, "reporter": "Teacher"},
+      {"age": "5-6", "count": 28, "reporter": "Teacher"},
+      {"age": "7-9", "count": 16, "reporter": "Teacher"},
+      {"age": "10+", "count": 10, "reporter": "Teacher"},
+      {"age": "1-2", "count": 1, "reporter": "Self-reflection"},
+      {"age": "3-4", "count": 2, "reporter": "Self-reflection"},
+      {"age": "5-6", "count": 5, "reporter": "Self-reflection"},
+      {"age": "7-9", "count": 14, "reporter": "Self-reflection"},
+      {"age": "10+", "count": 34, "reporter": "Self-reflection"}
+    ]
+  },
+  "params": [
+    {
+      "name": "reporter_select",
+      "value": "All",
+      "bind": {"input": "select", "options": ["All", "Parent/caregiver", "Teacher", "Self-reflection"], "name": "Reporter: "}
+    }
+  ],
+  "transform": [
+    {"filter": "reporter_select == 'All' || datum.reporter == reporter_select"}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "age", "type": "ordinal", "title": "Age at first concern", "sort": ["1-2", "3-4", "5-6", "7-9", "10+"]},
+    "y": {"field": "count", "type": "quantitative", "title": "Illustrative number of cases"},
+    "color": {"field": "reporter", "type": "nominal", "title": "Reporter"},
+    "tooltip": [
+      {"field": "reporter", "type": "nominal"},
+      {"field": "age", "type": "ordinal", "title": "Age"},
+      {"field": "count", "type": "quantitative", "title": "Cases"}
+    ]
+  }
+}

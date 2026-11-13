@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "data": {
+    "values": [
+      {"stage": "0-3 months", "monthsCount": 24, "support": "Speech and language"},
+      {"stage": "4-6 months", "monthsCount": 36, "support": "Speech and language"},
+      {"stage": "7-12 months", "monthsCount": 28, "support": "Speech and language"},
+      {"stage": "12+ months", "monthsCount": 12, "support": "Speech and language"},
+
+      {"stage": "0-3 months", "monthsCount": 18, "support": "Occupational therapy"},
+      {"stage": "4-6 months", "monthsCount": 30, "support": "Occupational therapy"},
+      {"stage": "7-12 months", "monthsCount": 34, "support": "Occupational therapy"},
+      {"stage": "12+ months", "monthsCount": 18, "support": "Occupational therapy"},
+
+      {"stage": "0-3 months", "monthsCount": 20, "support": "Mental health"},
+      {"stage": "4-6 months", "monthsCount": 26, "support": "Mental health"},
+      {"stage": "7-12 months", "monthsCount": 32, "support": "Mental health"},
+      {"stage": "12+ months", "monthsCount": 22, "support": "Mental health"},
+
+      {"stage": "0-3 months", "monthsCount": 40, "support": "Community/peer support"},
+      {"stage": "4-6 months", "monthsCount": 30, "support": "Community/peer support"},
+      {"stage": "7-12 months", "monthsCount": 20, "support": "Community/peer support"},
+      {"stage": "12+ months", "monthsCount": 10, "support": "Community/peer support"}
+    ]
+  },
+  "params": [
+    {
+      "name": "support_select",
+      "value": "All supports",
+      "bind": {"input": "select", "options": ["All supports", "Speech and language", "Occupational therapy", "Mental health", "Community/peer support"], "name": "Support type: "}
+    }
+  ],
+  "transform": [
+    {"filter": "support_select == 'All supports' || datum.support == support_select"}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "stage", "type": "ordinal", "title": "Time to access support", "sort": ["0-3 months", "4-6 months", "7-12 months", "12+ months"]},
+    "y": {"field": "monthsCount", "type": "quantitative", "title": "Illustrative number of people"},
+    "color": {"field": "support", "type": "nominal", "title": "Support"},
+    "xOffset": {"field": "support"},
+    "tooltip": [
+      {"field": "support", "type": "nominal"},
+      {"field": "stage", "type": "ordinal", "title": "Wait period"},
+      {"field": "monthsCount", "type": "quantitative", "title": "People"}
+    ]
+  }
+}

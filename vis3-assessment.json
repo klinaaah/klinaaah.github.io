@@ -1,0 +1,63 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 320,
+  "data": {
+    "values": [
+      {"component": "Developmental history", "status": "Completed", "count": 88, "ageBand": "Children"},
+      {"component": "Developmental history", "status": "Not completed", "count": 12, "ageBand": "Children"},
+      {"component": "Caregiver interview", "status": "Completed", "count": 92, "ageBand": "Children"},
+      {"component": "Caregiver interview", "status": "Not completed", "count": 8, "ageBand": "Children"},
+      {"component": "Direct observation", "status": "Completed", "count": 85, "ageBand": "Children"},
+      {"component": "Direct observation", "status": "Not completed", "count": 15, "ageBand": "Children"},
+      {"component": "Language/cognitive testing", "status": "Completed", "count": 76, "ageBand": "Children"},
+      {"component": "Language/cognitive testing", "status": "Not completed", "count": 24, "ageBand": "Children"},
+      {"component": "School/community input", "status": "Completed", "count": 70, "ageBand": "Children"},
+      {"component": "School/community input", "status": "Not completed", "count": 30, "ageBand": "Children"},
+
+      {"component": "Developmental history", "status": "Completed", "count": 80, "ageBand": "Adolescents"},
+      {"component": "Developmental history", "status": "Not completed", "count": 20, "ageBand": "Adolescents"},
+      {"component": "Caregiver interview", "status": "Completed", "count": 74, "ageBand": "Adolescents"},
+      {"component": "Caregiver interview", "status": "Not completed", "count": 26, "ageBand": "Adolescents"},
+      {"component": "Direct observation", "status": "Completed", "count": 68, "ageBand": "Adolescents"},
+      {"component": "Direct observation", "status": "Not completed", "count": 32, "ageBand": "Adolescents"},
+      {"component": "Language/cognitive testing", "status": "Completed", "count": 65, "ageBand": "Adolescents"},
+      {"component": "Language/cognitive testing", "status": "Not completed", "count": 35, "ageBand": "Adolescents"},
+      {"component": "School/community input", "status": "Completed", "count": 72, "ageBand": "Adolescents"},
+      {"component": "School/community input", "status": "Not completed", "count": 28, "ageBand": "Adolescents"},
+
+      {"component": "Developmental history", "status": "Completed", "count": 62, "ageBand": "Adults"},
+      {"component": "Developmental history", "status": "Not completed", "count": 38, "ageBand": "Adults"},
+      {"component": "Caregiver interview", "status": "Completed", "count": 40, "ageBand": "Adults"},
+      {"component": "Caregiver interview", "status": "Not completed", "count": 60, "ageBand": "Adults"},
+      {"component": "Direct observation", "status": "Completed", "count": 58, "ageBand": "Adults"},
+      {"component": "Direct observation", "status": "Not completed", "count": 42, "ageBand": "Adults"},
+      {"component": "Language/cognitive testing", "status": "Completed", "count": 46, "ageBand": "Adults"},
+      {"component": "Language/cognitive testing", "status": "Not completed", "count": 54, "ageBand": "Adults"},
+      {"component": "School/community input", "status": "Completed", "count": 35, "ageBand": "Adults"},
+      {"component": "School/community input", "status": "Not completed", "count": 65, "ageBand": "Adults"}
+    ]
+  },
+  "params": [
+    {
+      "name": "age_select",
+      "value": "Children",
+      "bind": {"input": "select", "options": ["Children", "Adolescents", "Adults"], "name": "Age band: "}
+    }
+  ],
+  "transform": [
+    {"filter": "datum.ageBand == age_select"}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {"field": "component", "type": "nominal", "title": "Assessment component", "sort": null},
+    "x": {"field": "count", "type": "quantitative", "title": "Illustrative share (%)", "stack": "normalize"},
+    "color": {"field": "status", "type": "nominal", "title": "Status", "scale": {"range": ["#4c78a8", "#e0e0e0"]}},
+    "tooltip": [
+      {"field": "ageBand", "type": "nominal", "title": "Age band"},
+      {"field": "component", "type": "nominal"},
+      {"field": "status", "type": "nominal"},
+      {"field": "count", "type": "quantitative", "title": "Value"}
+    ]
+  }
+}

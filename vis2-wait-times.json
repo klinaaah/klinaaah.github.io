@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 300,
+  "data": {
+    "values": [
+      {"year": 2020, "months": 8, "service": "Community clinic"},
+      {"year": 2021, "months": 10, "service": "Community clinic"},
+      {"year": 2022, "months": 11, "service": "Community clinic"},
+      {"year": 2023, "months": 9, "service": "Community clinic"},
+      {"year": 2024, "months": 8, "service": "Community clinic"},
+      {"year": 2020, "months": 6, "service": "Hospital team"},
+      {"year": 2021, "months": 9, "service": "Hospital team"},
+      {"year": 2022, "months": 12, "service": "Hospital team"},
+      {"year": 2023, "months": 10, "service": "Hospital team"},
+      {"year": 2024, "months": 9, "service": "Hospital team"},
+      {"year": 2020, "months": 3, "service": "Private provider"},
+      {"year": 2021, "months": 4, "service": "Private provider"},
+      {"year": 2022, "months": 5, "service": "Private provider"},
+      {"year": 2023, "months": 4, "service": "Private provider"},
+      {"year": 2024, "months": 3, "service": "Private provider"}
+    ]
+  },
+  "params": [
+    {
+      "name": "service_select",
+      "value": "All services",
+      "bind": {"input": "select", "options": ["All services", "Community clinic", "Hospital team", "Private provider"], "name": "Service type: "}
+    }
+  ],
+  "transform": [
+    {"filter": "service_select == 'All services' || datum.service == service_select"}
+  ],
+  "mark": {"type": "line", "point": true},
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal", "title": "Referral year"},
+    "y": {"field": "months", "type": "quantitative", "title": "Average wait (months)"},
+    "color": {"field": "service", "type": "nominal", "title": "Service"},
+    "tooltip": [
+      {"field": "service", "type": "nominal"},
+      {"field": "year", "type": "ordinal"},
+      {"field": "months", "type": "quantitative", "title": "Months"}
+    ]
+  }
+}
